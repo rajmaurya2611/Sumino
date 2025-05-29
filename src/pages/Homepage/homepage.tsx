@@ -2,6 +2,7 @@ import React from 'react';
 import FirstComponent from '../../components/Homepage/firstComponent';
 import HeaderComponent from '../../components/Homepage/header';
 import OurServices from '../../components/Homepage/ourServices';
+import OurProducts from '../../components/Homepage/ourProducts';
 
 /**
  * Homepage Component
@@ -14,6 +15,7 @@ const Homepage: React.FC = () => {
         <HeaderComponent/>
         <FirstComponent />
         <OurServices/>
+        <OurProducts/>
     </div>
   );
 };

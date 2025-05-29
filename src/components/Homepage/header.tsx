@@ -7,7 +7,7 @@ import suminoLogo from "../../assets/Homepage/Group 1563.png"; // Adjust the pat
  */
 const HeaderComponent: React.FC = () => {
   return (
-    <header className="absolute top-0 left-0 w-full z-50 bg-transparent py-4 px-0 sm:px-8 md:px-8 lg:px-16 ">
+    <header className="absolute top-0 left-0 w-full z-50 bg-transparent py-4 px-4 sm:px-8 md:px-8 lg:px-16 ">
   <div className="w-full flex items-center">
         {/* Logo on the left */}
         <div className="">
