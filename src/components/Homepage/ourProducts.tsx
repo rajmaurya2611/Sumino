@@ -58,7 +58,7 @@ const OurProducts: React.FC = () => {
         </h2>
       </div>
 
-      <div className="mt-12 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mt-12 max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         {products.map((prod, idx) => (
           <div
             key={idx}
@@ -69,8 +69,8 @@ const OurProducts: React.FC = () => {
               <FlipCard
                 frontImage={prod.frontImage}
                 backImage={prod.backImage}
-                width="w-48"
-                height="h-48"
+                width="w-40"
+                height="h-40"
               />
             </div>
 
