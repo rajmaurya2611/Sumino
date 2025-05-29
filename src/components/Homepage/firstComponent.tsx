@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'antd';
+import { useNavigate } from 'react-router-dom'
 import landingImage from "../../assets/Homepage/Group 1361498813.png";
 import motionImage1 from "../../assets/Homepage/Group 1580.png";
 import motionImage2 from "../../assets/Homepage/Group 5836.png";
@@ -10,6 +11,13 @@ import motionImage2 from "../../assets/Homepage/Group 5836.png";
  * optimized for extra-large screens.
  */
 const FirstComponent: React.FC = () => {
+
+     const navigate = useNavigate()
+
+     const handleClick = () => {
+    navigate('/products')
+  }
+
   return (
     <section className="bg-[#ECF7FB] font-montserrat pt-20">
       <div className="relative flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto px-6 lg:flex-row items-center justify-between md:px-16 xl:px-0 ">
@@ -25,7 +33,7 @@ const FirstComponent: React.FC = () => {
             Productive & Creative Tools!<br />
             Make Your Day-to-Day Easy. 
           </p>
-          <Button type="primary" size="large">
+          <Button type="primary" size="large"  onClick={handleClick}>
             Explore Apps
           </Button>
         </div>

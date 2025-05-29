@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         {/* Main content */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left */}
-          <div className="space-y-2">
+          <div className="space-y-2 text-md">
             <p>Made with love and fueled by code and caffeine (50% sugar)</p>
             <p>@Sumino Apps</p>
             <div className="flex space-x-4 mt-2 text-2xl">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* About us */}
-          <div className="space-y-2 ml-20">
+          <div className="space-y-2 ml-28 pl-8 text-md">
             <h4 className="text-gray-800 font-semibold">About us</h4>
             <ul className="space-y-1">
               <li>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
 
           {/* Contact us */}
           <div className="space-y-2">
-            <h4 className="text-gray-800 font-semibold">Contact us</h4>
+            <h4 className="text-gray-800 font-semibold text-md ">Contact us</h4>
             <p>
               Lorem ipsum is simply dummy text of the printing and
               typesetting industry.
