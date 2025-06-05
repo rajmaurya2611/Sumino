@@ -3,6 +3,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage/homepage';
 import AllProductsPage from './pages/AllProducts/allProductsPage';
+import InsaverMain from './pages/Insaver/insaverMain';
 
 /**
  * App Component
@@ -16,6 +17,8 @@ const App: React.FC = () => {
 
       {/* your other pages */}
       <Route path="/products"  element={<AllProductsPage />} />
+
+      <Route path="/products/insaver"  element={<InsaverMain />} />
     </Routes>
   );
 };

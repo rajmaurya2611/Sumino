@@ -2,13 +2,16 @@
 import React, { useState, useMemo } from 'react'
 import { Input, Button } from 'antd'
 import Fuse from 'fuse.js'
+import { useNavigate } from 'react-router-dom'
 import { FlipCard } from '../Homepage/flipCard'
 
 // Replace these with your actual “front” and “back” images
 import product1Front from '../../assets/Homepage/image-removebg-preview (1) 1.png'
 import product1Back  from '../../assets/Homepage/kwiGaV_qrcode 1.png'
+
 import product2Front from '../../assets/Homepage/image-removebg-preview (1) 1.png'
 import product2Back  from '../../assets/Homepage/kwiGaV_qrcode 1.png'
+
 import product3Front from '../../assets/Homepage/image-removebg-preview (1) 1.png'
 import product3Back  from '../../assets/Homepage/kwiGaV_qrcode 1.png'
 // …add as many products as you like here…
@@ -18,25 +21,26 @@ interface Product {
   description: string
   frontImage: string
   backImage: string
+  /** Internal route (if starts with "/") or external URL */
   url: string
   buttonText: string
 }
 
 const products: Product[] = [
   {
-    title: 'Product One',
+    title: 'InSaver',
     description: 'A concise description of Product One—what it does and why it’s great.',
     frontImage: product1Front,
     backImage:  product1Back,
-    url: 'https://www.product-one.com',
-    buttonText: 'Learn More',
+    url: '/products/insaver',            // internal route
+    buttonText: 'Visit',
   },
   {
     title: 'Product Two',
     description: 'A concise description of Product Two—key features and benefits.',
     frontImage: product2Front,
     backImage:  product2Back,
-    url: 'https://www.product-two.com',
+    url: 'https://www.product-two.com',  // external link
     buttonText: 'Explore Product Two',
   },
   {
@@ -44,7 +48,7 @@ const products: Product[] = [
     description: 'A concise description of Product Three—how it helps your users succeed.',
     frontImage: product3Front,
     backImage:  product3Back,
-    url: 'https://www.product-three.com',
+    url: 'https://www.product-three.com', // external link
     buttonText: 'Discover Now',
   },
   // …more products…
@@ -58,6 +62,8 @@ const fuseOptions = {
 
 const OurAllProducts: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('')
+  const navigate = useNavigate()
+
   // Memoize Fuse instance so it doesn't recreate on every render
   const fuse = useMemo(() => new Fuse(products, fuseOptions), [])
 
@@ -66,6 +72,16 @@ const OurAllProducts: React.FC = () => {
     if (!searchQuery.trim()) return products
     return fuse.search(searchQuery).map(result => result.item)
   }, [searchQuery, fuse])
+
+  const handleButtonClick = (url: string) => {
+    if (url.startsWith('/')) {
+      // Internal navigation
+      navigate(url)
+    } else {
+      // External link
+      window.open(url, '_blank')
+    }
+  }
 
   return (
     <section className="py-16 bg-gray-50">
@@ -112,8 +128,7 @@ const OurAllProducts: React.FC = () => {
               </p>
               <Button
                 type="primary"
-                href={prod.url}
-                target="_blank"
+                onClick={() => handleButtonClick(prod.url)}
                 className="mt-4 self-start"
               >
                 {prod.buttonText}
