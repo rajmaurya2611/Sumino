@@ -4,6 +4,7 @@ import InsaverLandingComponent from '../../components/Insaver/insaverLanding';
 import ThreeCardCarousel from '../../components/Insaver/carousel';
 import AboutSection from '../../components/Insaver/aboutInsaver';
 import AppFeatures from '../../components/Insaver/insaverFeatures';
+import InsaverFooter from '../../components/Insaver/insaverFooter';
 
 /**
  * Homepage Component
@@ -18,6 +19,7 @@ const InsaverMain: React.FC = () => {
         <AboutSection/>
         <AppFeatures/>
         <ThreeCardCarousel/>
+        <InsaverFooter/>
         
     </div>
   );

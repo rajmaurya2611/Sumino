@@ -31,7 +31,7 @@ const items2: MenuProps['items'] = [UserOutlined, LaptopOutlined, NotificationOu
   },
 );
 
-const App: React.FC = () => {
+const InsaverPrivacyPolicy: React.FC = () => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
@@ -80,4 +80,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default InsaverPrivacyPolicy;
